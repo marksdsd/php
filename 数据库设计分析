@@ -1,0 +1,127 @@
+网站基本配置信息表config
+网站配置信息表如下字段，记录(id),网站标题(Site_title),网站地址(Site_url),网站地址(Site_logo),网站关键字(Site_keywords),网站描述(Site_description),网站描述(),新闻发布内容(Content),栏目id(posid)。
+
+字段名	类型	NULL	主键	外键	唯一	自增	说明
+Id	Int(11)	否	是	否	是	是	记录id
+Site_title	Varchar(50)	是	否	否	否	否	网站标题
+Site_url	Varchar(50)	是	否	否	否	否	网站地址
+Site_logo	Varchar(100)	是	否	否	否	否	网站logo
+Site_keywords	Text	是	否	否	否	否	网站关键字
+Site_description	Text	是	否	否	否	否	网站描述
+Site_copyright	Varchar(100)	是	否	否	否	否	网站版权
+Company_name	Varchar(50)	是	否	否	否	否	公司名称
+Company_phone	Varchar(20)	是	否	否	否	否	公司电话
+Company_fax	Varchar(20)	是	否	否	否	否	公司传真
+Company_email	Varchar(30)	是	否	否	否	否	公司邮箱
+Company_wei	Varchar(30)	是	否	否	否	否	公司微信
+Company_ewm	Varchar(100)	是	否	否	否	否	公司二维码
+Company_address	Varchar(50)	是	否	否	否	否	公司地址
+
+
+管理员信息表admin
+
+字段名	类型	NULL	主键	外键	唯一	自增	说明
+id	Int(11)	否	是	否	是	是	记录Id
+admin_name	Varchar(50)	是	否	否	是	否	管理员账号
+admin_pass	Varchar(50)	是	否	否	否	否	管理员密码
+
+
+
+
+
+
+
+
+
+
+单页信息表single
+
+字段名	类型	NULL	主键	外键	唯一	自增	说明
+Id	Int(11)	否	是	否	是	是	记录Id
+Title	Varchar(50)	是	否	否	否	否	单页标题
+Comefrom	Varchar(20)	是	否	否	否	否	来源
+Pubdate	Varchar(20)	是	否	否	否	否	发布日期
+Keywords	Text	是	否	否	否	否	关键字
+Description	Text	是	否	否	否	否	描述
+content	Text	是	否	否	否	否	单页内容
+
+新闻表作为实体，它具有的属性有新闻编号，新闻标题，新闻来源网址，新闻来源名，新闻发布日期，新闻发布内容，栏目id posid
+
+①新闻表(article)
+新闻表如下字段，新闻编号(id),新闻标题(title),新闻来源网址(comefrome),新闻关键字(description),新闻发布日期（pubDate),新闻发布内容(Content),栏目id(posid)。如图
+表 4 1新闻表数据结构
+
+Field	Type	null	主键	外键	唯一	自增	说明
+id	Int(11)	否	是	否	是	是	记录Id
+title	Varchar(50)	是	否	否	否	否	文章标题
+comefrom	Varchar(20)	是	否	否	否	否	来源
+Pubdate	Varchar(20)	  是	否	否	否	否	发布日期
+Keywords	Text	是	否	否	否	否	关键字
+Dsecription	Text	是	否	否	否	否	描述
+content	text	是	否	否	否	否	文章内容
+posid	Varchar(10)	是	否	否	否	否	是否推荐文章
+
+ 
+④产品信息表produce
+产品信息表produce包含如下字段产品(id)，产品标题(title)，来源(comefrom),发布日期(pubdate),产品缩略图(thumbnail),关键字(keywords),描述(description),内容(content),推荐位置(posid)
+字段名	类型	NULL	主键	外键	唯一	自增	说明
+Id	Int(11)	否	是	否	是	是	记录Id
+Title	Varchar(50)	是	否	否	否	否	文章标题
+Comefrom	Varchar(20)	是	否	否	否	否	来源
+Pubdate	Varchar(20)	是	否	否	否	否	发布日期
+Thumbnail	Varchar(100)	是	否	否	否	否	产品缩略图
+Keywords	Text	是	否	否	否	否	关键字
+Description	Text	是	否	否	否	否	描述
+content	Text	是	否	否	否	否	文章内容
+Posid	Varchar(10)	是	否	否	否	否	是否推荐产品
+
+
+
+
+
+
+
+留言信息表guestbook
+字段名	类型	null	主键	外键	唯一	自增	说明
+Id	Int(11)	否	是	否	是	是	记录id
+Title	Varchar(50)	是	否	否	否	否	留言标题
+Pubdate	Varchar(50)	是	否	否	否	否	留言日期
+Name	Varchar(30)	是	否	否	否	否	留言人
+Tel	Varchar(20)	是	否	否	否	否	留言人电话
+Qq	Varchar(15)	是	否	否	否	否	留言人qq
+email	Varchar(30)	是	否	否	否	否	留言人email
+content	Text	是	否	否	否	否	留言内容
+deal	Varchar(5)	是	否	否	否	否	是否处理
+
+
+
+
+ 
+Qq客服信息表
+字段名	类型	NULL	主键	外键	唯一	自增	说明
+Id	Int(11)	否	是	否	是	是	记录Id
+Title	Varchar(30)	是	否	否	否	否	客服标题
+Qqnum	Varchar(15)	是	否	否	否	否	Qq号码
+truename	Varchar(20)	是	否	否	否	否	客服真名
+
+
+②新闻栏目表
+新闻栏目表(category)包含如下字段主栏目编号(id),父栏目编号(pid),栏目名称(name)，如图
+
+表 4 2栏目表数据结构
+Field	Type	null	Key	Default	Extra
+Id	Int(4)	Not null	pri	null	Auto_increment
+pid	Int(4)	Not null		null	
+name	Varchar(200)	Not null		null	
+
+
+③管理员表(admin)
+管理员表(admin)包含如下字段用户编号(aid),用户名(aname),密码(apwd),如图
+
+表 4 3管理员表数据
+Field	Type	null	Key	Default	Extra
+id	Int(3)	Not null	pri	null	Auto_increment
+Admin_name	Varchar(20)	Not null		null	
+Admin_pass	Varcahr(20)	Not null		null	
+
+
